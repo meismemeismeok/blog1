@@ -1,0 +1,15 @@
+{% extends "blog/home.html" %}
+
+{% block title %}login{% endblock title %}
+
+{% block content %}
+<h1>Login </h1>
+
+<hr>
+
+<form action=""method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-outline-success" value="login">
+</form>
+{% endblock content %}

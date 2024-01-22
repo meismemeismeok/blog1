@@ -1,0 +1,28 @@
+{% extends "blog/index.html" %}
+
+
+{% block content %}
+
+<h1 class="text-center"> Make Your Day with MyBlog</h1><br>
+{% for post in post %}
+<div class="card w-80 mb-3 mx-5" style="box-shadow: 2px 2px 5px rgba(0,0,0,0.2)">
+    <div class="card-body">
+        <div>
+
+                <img width="30px" height="30px" style="border-radius:50%;" src="{{ post.author.profile.image.url }}"
+                     alt="">
+                <a href="#" style="text-decoration: none;"><h6 class="card-title ml-5">@{{ post.author }}</h6></a>
+        </div>
+        <h4 class="card-title" href="">{{ post.title }}</h4>
+        <p class="card-text">{{ post.content }}</p>
+        <small>{{ post.date_posted|timesince }} ago</small>
+        </a>
+        <br>
+        <br>
+
+    </div>
+    </a>
+</div>
+{% endfor %}
+
+{% endblock %}
